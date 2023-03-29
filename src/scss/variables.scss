@@ -1,0 +1,76 @@
+// Шрифт по умолчанию
+$fontFamily: "Caveat";
+$fontSize: rem(36); // где 36(рх) - размер по умолчанию из макета
+
+// Основные цвета
+$mainColor: #040404;
+$mainGreyColor: #afafaf;
+$mainDarkGreyColor: #9f9f9f;
+$mainPinkColor: #f8ebeb;
+$mainBlueColor: #e5e9ef;
+
+// Минимальная ширина страницы
+$minWidth: 320;
+// Ширина полотна (макета)
+$maxWidth: 1440;
+// Ширина ограничивающего контейнера
+$maxWidthContainer: 1370;
+// Общий отступ у контейнера (30 = по 15рх с каждой стороны)
+$containerPadding: 30;
+
+// Тип адаптива:
+// 1 = отзывчивость (у контейнера нет бреёкпоинтов)
+// 2 = по брейк-поинтам (контейнер меняет ширину по брейк-поинтам
+$responsiveType: 1;
+// Ширина срабатывания первого брейк-поинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+// Брейк-поинты
+$pc: em($containerWidth); // ПК, ноутбуки, горизонтальные планшеты
+$tablet: em(991.98); // Планшеты, горизонтальные телефоны
+$mobile: em(767.98); // Телефоны L
+$mobileSmall: em(479.98); // Телефоны S
+
+// Ограничивающий контейнер ======================================================================================================================================================================================================================
+
+/*
+(i) Стили будут применяться ко всем классам содержащим *__container. Например header__container, main__container и т.д. Снипет (HTML): cnt
+*/
+
+@if ($responsiveType==1) {
+  // Отзывчивая
+  [class*="__container"] {
+    @if ($maxWidthContainer>0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
+      margin: 0 auto;
+    }
+    @if ($containerPadding>0) {
+      padding: 0 rem(math.div($containerPadding, 2));
+    }
+  }
+} @else {
+  // По брейк-поинтам
+  [class*="__container"] {
+    margin: 0 auto;
+    @if ($maxWidthContainer>0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
+    } @else {
+      @if ($containerPadding>0) {
+        padding: 0 rem(math.div($containerPadding, 2));
+      }
+    }
+    @media (max-width: $pc) {
+      max-width: rem(970);
+    }
+    @media (max-width: $tablet) {
+      max-width: rem(750);
+    }
+    @media (max-width: $mobile) {
+      max-width: none;
+      @if ($containerPadding>0 and $maxWidthContainer>0) {
+        padding: 0 rem(math.div($containerPadding, 2));
+      }
+    }
+  }
+}

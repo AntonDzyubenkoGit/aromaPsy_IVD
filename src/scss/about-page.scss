@@ -1,0 +1,468 @@
+.introduce-about {
+  // .introduce-about__container
+  &__container {
+    display: grid;
+    @media (min-width: $tablet) {
+      grid-template-areas:
+        "action title"
+        "action info";
+      grid-template-columns: percent(525, 1370) 1fr;
+      grid-template-rows: percent(200, 940) auto;
+      @include adaptiveValue("column-gap", 33, 20);
+      max-height: rem(940);
+    }
+    @media (max-width: $tablet) {
+      grid-template-areas:
+        "action title"
+        "info info";
+      grid-template-rows: 1fr auto;
+      grid-template-columns: auto auto;
+      gap: rem(20);
+    }
+    @media (max-width: $mobile) {
+      grid-template-areas:
+        "action"
+        "title"
+        "info";
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr auto auto;
+    }
+  }
+  // .introduce-about__action
+  &__action {
+    grid-area: action;
+  }
+  // .introduce-about__media
+  &__media {
+  }
+  // .introduce-about__photo
+  &__photo {
+    position: relative;
+    z-index: 20;
+    justify-self: center;
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: rem(-45);
+      left: rem(-40);
+      width: percent(450, 525);
+      height: percent(942, 872);
+      background: $mainDarkGreyColor;
+      @media (max-width: $tablet) {
+        top: rem(-20);
+      }
+    }
+    img {
+      width: 100%;
+      position: relative;
+      z-index: 20;
+    }
+  }
+  // .introduce-about__info
+  &__info {
+    grid-area: info;
+    @media (max-width: $tablet) {
+      margin-top: rem(30);
+      grid-column-start: 1/3;
+    }
+    @media (max-width: $mobile) {
+      margin-top: 0;
+    }
+  }
+  // .introduce-about__title
+  &__title {
+    grid-area: title;
+    @include adaptiveValue("font-size", 36, 22);
+    line-height: math.div(45, 36);
+    margin-bottom: rem(45);
+    @media (max-width: $tablet) {
+      align-self: center;
+    }
+    @media (max-width: $mobile) {
+      @include adaptiveValue("margin-top", 150, 30);
+      margin-bottom: 0;
+    }
+  }
+  // .introduce-about__cards
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  // .introduce-about__card
+  &__card {
+    @include adaptiveValue("padding-top", 55, 20);
+    @include adaptiveValue("padding-bottom", 55, 20);
+    @include adaptiveValue("padding-left", 20, 10);
+    @include adaptiveValue("padding-right", 20, 10);
+    @include adaptiveValue("font-size", 48, 24);
+    line-height: math.div(60, 48);
+    background: #ffffff;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 40, 20);
+    }
+
+    @media (min-width: rem(1300)) {
+      max-width: rem(600);
+      &_offset-1 {
+        position: absolute;
+        top: 70%;
+        left: 25%;
+      }
+    }
+  }
+}
+/*=========================================================================*/
+
+.helper-about {
+  // .helper-about__container
+  &__container {
+  }
+  // .helper-about__proposal
+  &__proposal {
+    @include adaptiveValue("font-size", 48, 24);
+    margin-bottom: rem(20);
+    line-height: math.div(60, 48);
+    text-align: center;
+  }
+  // .helper-about__situations
+  &__situations {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    position: relative;
+    @media (max-width: rem(1300)) {
+      row-gap: rem(20);
+    }
+  }
+  // .helper-about__title
+  &__title {
+    @include adaptiveValue("padding-top", 115, 20);
+    @include adaptiveValue("padding-bottom", 115, 20);
+    @include adaptiveValue("padding-left", 50, 10);
+    @include adaptiveValue("padding-right", 50, 10);
+    @include adaptiveValue("font-size", 48, 24);
+    line-height: math.div(60, 48);
+    background: #ffffff;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    @media (min-width: rem(1300)) {
+      max-width: rem(750);
+      &_offset-1 {
+        justify-self: center;
+        transform: translateY(-25%);
+        z-index: 2;
+      }
+      &_offset-2 {
+        transform: translateY(-45%);
+        justify-self: flex-end;
+      }
+    }
+    @media (max-width: rem(1300)) {
+    }
+  }
+  // .helper-about__joy
+  &__joy {
+    @include adaptiveValue("font-size", 64, 32);
+    line-height: math.div(81, 64);
+    text-align: center;
+    @media (min-width: rem(1300)) {
+      position: absolute;
+      transform: translateY(-60%);
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+/*=========================================================================*/
+
+.portrait-about {
+  // .portrait-about__container
+  &__container {
+  }
+  // .portrait-about__content
+  &__content {
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue("padding-top", 88, 20);
+    @include adaptiveValue("padding-bottom", 88, 20);
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-image: url("../img/about/stairs_bg.webp");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    &_mirrored {
+      align-items: flex-end;
+      &::before {
+        transform: scale(-1, 1);
+      }
+      @media (max-width: $mobile) {
+        align-items: flex-start;
+      }
+    }
+  }
+  // .portrait-about__text
+  &__text {
+    @include adaptiveValue("font-size", 48, 24);
+    line-height: math.div(60, 48);
+    @include adaptiveValue("padding-top", 22, 10);
+    @include adaptiveValue("padding-bottom", 22, 10);
+    @include adaptiveValue("padding-left", 90, 0);
+    @include adaptiveValue("padding-right", 90, 0);
+    background-color: rgba(255, 255, 255, 0.25);
+    max-width: rem(1000);
+    &_mirrored {
+      text-align: right;
+    }
+    @media (max-width: $mobile) {
+      &_mirrored {
+        text-align: left;
+      }
+    }
+  }
+}
+/*=========================================================================*/
+
+.consultation-about {
+  // .consultation-about__container
+  &__container {
+  }
+  // .consultation-about__university
+  &__university {
+    @include adaptiveValue("font-size", 48, 24);
+    line-height: math.div(60, 48);
+    background-color: #fff;
+    @include adaptiveValue("padding-top", 50, 10);
+    @include adaptiveValue("padding-bottom", 50, 10);
+    @include adaptiveValue("padding-left", 60, 10);
+    @include adaptiveValue("padding-right", 60, 10);
+    @include adaptiveValue("margin-bottom", 70, 20);
+    max-width: rem(1240);
+    margin: 0 auto;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  // .consultation-about__content
+  &__content {
+    max-width: rem(970);
+    margin: 0 auto;
+  }
+  // .consultation-about__title
+  &__title {
+    background-color: $mainGreyColor;
+    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
+    @include adaptiveValue("font-size", 48, 24);
+    line-height: math.div(60, 48);
+    color: #fff;
+    text-align: center;
+    @include adaptiveValue("padding-top", 20, 10);
+    @include adaptiveValue("padding-bottom", 20, 10);
+    @include adaptiveValue("padding-left", 28, 10);
+    @include adaptiveValue("padding-right", 28, 10);
+    @media (max-width: $tablet) {
+      margin-bottom: rem(20);
+    }
+    @media (max-width: $mobile) {
+      text-align: left;
+    }
+  }
+  // .consultation-about__cards
+  &__cards {
+    display: grid;
+    @include adaptiveValue("margin-bottom", 50, 20);
+    @media (min-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: rem(66);
+    }
+    @media (max-width: $tablet) {
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: rem(20);
+    }
+  }
+  // .consultation-about__card
+  &__card {
+    @include adaptiveValue("font-size", 48, 24);
+    line-height: math.div(60, 48);
+    text-align: center;
+    background-color: #fff;
+    @include adaptiveValue("padding-top", 50, 10);
+    @include adaptiveValue("padding-bottom", 110, 10);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    @media (max-width: $tablet) {
+      // text-align: left;
+    }
+  }
+  // .consultation-about__text
+  &__text {
+    display: grid;
+    grid-template-rows: 1fr repeat(2, auto);
+    @include adaptiveValue("row-gap", 60, 20);
+    @media (min-width: $tablet) {
+      p {
+        &:first-child {
+          margin-bottom: rem(50);
+        }
+      }
+    }
+  }
+  // .consultation-about__button
+  &__button {
+    width: 100%;
+    @include adaptiveValue("margin-bottom", 50, 20);
+    border: 1px solid $mainColor;
+    @include adaptiveValue("font-size", 64, 24);
+    @media (max-width: $mobile) {
+      line-height: 1;
+    }
+  }
+  // .consultation-about__offline
+  &__offline {
+    display: flex;
+    justify-content: flex-end;
+    @include adaptiveValue("font-size", 36, 22);
+    line-height: math.div(45, 36);
+  }
+}
+/*=========================================================================*/
+
+.psychology-about {
+  // .psychology-about__container
+  &__container {
+  }
+  // .psychology-about__diplom
+  &__diplom {
+  }
+}
+.diplom-about {
+  display: grid;
+  @include adaptiveValue("margin-bottom", 80, 20);
+  @media (min-width: $mobile) {
+    grid-template-columns: percent(500, 1400) 1fr;
+    @include adaptiveValue("column-gap", 110, 0);
+  }
+  @media (max-width: $mobile) {
+    grid-template-rows: auto auto;
+    row-gap: rem(20);
+  }
+  // .diplom-about__image
+  &__image {
+    img {
+      max-width: 100%;
+    }
+    @media (max-width: $mobile) {
+      order: 2;
+    }
+  }
+  // .diplom-about__description
+  &__description {
+    align-self: center;
+    @include adaptiveValue("font-size", 36, 22);
+    line-height: math.div(45, 36);
+    background-color: #fff;
+    @include adaptiveValue("padding-top", 85, 10);
+    @include adaptiveValue("padding-bottom", 85, 10);
+    @include adaptiveValue("padding-left", 25, 10);
+    @include adaptiveValue("padding-right", 25, 10);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.diplom-about-mirrored {
+  display: grid;
+  @include adaptiveValue("margin-bottom", 80, 20);
+  @media (min-width: $mobile) {
+    grid-template-columns: 1fr percent(500, 1400);
+    @include adaptiveValue("column-gap", 110, 0);
+  }
+  @media (max-width: $mobile) {
+    grid-template-rows: auto auto;
+    row-gap: rem(20);
+  }
+  // .diplom-about-mirrored__image
+  &__image {
+    img {
+      max-width: 100%;
+    }
+  }
+  // .diplom-about-mirrored__description
+  &__description {
+    align-self: center;
+    @include adaptiveValue("font-size", 36, 22);
+    line-height: math.div(45, 36);
+    background-color: #fff;
+    @include adaptiveValue("padding-top", 85, 10);
+    @include adaptiveValue("padding-bottom", 85, 10);
+    @include adaptiveValue("padding-left", 25, 10);
+    @include adaptiveValue("padding-right", 25, 10);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+/*=========================================================================*/
+
+.certifications {
+  background-color: $mainBlueColor;
+  // .certifications__container
+  &__container {
+    position: relative;
+  }
+  // .certifications__title
+  &__title {
+    @include adaptiveValue("font-size", 48, 24);
+    line-height: math.div(60, 48);
+    text-align: center;
+    @include adaptiveValue("margin-bottom", 35, 20);
+    h4 {
+      background-color: #fff;
+      border: 1px solid $mainColor;
+      margin: 0 auto;
+      max-width: rem(700);
+    }
+  }
+  // .certifications__slider
+  &__slider {
+  }
+  // .certifications__wrapper
+  &__wrapper {
+  }
+  // .certifications__slide
+  &__slide {
+    img {
+      max-width: 100%;
+    }
+  }
+  // .certifications__dots
+  &__dots {
+    text-align: center;
+    @media (min-width: rem(1580)) {
+      display: none;
+    }
+  }
+  // .certifications__arrow
+  &__arrow {
+    width: rem(50);
+    height: rem(50);
+    top: 50%;
+    z-index: 10;
+    position: absolute;
+    &-prev {
+      left: rem(-70);
+      background: url("../img/about/arrow_prev.svg") no-repeat;
+    }
+    &-next {
+      left: calc(100% + rem(30));
+      background: url("../img/about/arrow_next.svg") no-repeat;
+    }
+    @media (max-width: rem(1580)) {
+      display: none;
+    }
+  }
+}
+

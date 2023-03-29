@@ -1,0 +1,305 @@
+.quote-oils {
+  @include adaptiveValue("padding-top", 50, 20);
+  @include adaptiveValue("padding-bottom", 50, 20);
+  // .quote-oils__container
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    // @include adaptiveValue("margin-bottom", 65, 30);
+    @include adaptiveValue("font-size", 32, 20);
+    line-height: math.div(40, 32);
+    q {
+      max-width: rem(990);
+      text-align: right;
+    }
+    @media (max-width: $tablet) {
+      q {
+        text-align: left;
+      }
+    }
+  }
+}
+/*=========================================================================*/
+
+.power-oils {
+  background-color: $mainBlueColor;
+  @include adaptiveValue("padding-top", 50, 20);
+  @include adaptiveValue("padding-bottom", 50, 20);
+  // .power-oils__container
+  &__container {
+    position: relative;
+  }
+  // .power-oils__slider
+  &__slider {
+    position: relative;
+    margin: 0 -28%;
+    @media (max-width: $mobile) {
+      margin: 0;
+    }
+  }
+  // .power-oils__slider-wrapper
+  &__slider-wrapper {
+    position: relative;
+    @include adaptiveValue("padding-bottom", 30, 20);
+  }
+  // .power-oils__slide
+  &__slide {
+    cursor: pointer;
+    // align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include adaptiveValue("font-size", 24, 18);
+    line-height: math.div(30, 24);
+    background-color: #fff;
+    @include adaptiveValue("padding-left", 30, 10);
+    @include adaptiveValue("padding-right", 30, 10);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: height 0.5s ease 0s;
+    @media (max-width: $mobile) {
+      padding-top: rem(10);
+      padding-bottom: rem(10);
+    }
+  }
+  // .power-oils__content
+  &__content {
+  }
+  // .power-oils__dots
+  &__dots {
+    &.swiper-pagination-bullets {
+      position: absolute;
+      bottom: -5%;
+      left: 50%;
+      z-index: 10;
+      width: auto;
+      transform: translateX(-50%);
+    }
+    & .swiper-pagination-bullet {
+      @include adaptiveValue("width", 15, 8);
+      @include adaptiveValue("height", 15, 8);
+    }
+  }
+  // .power-oils__control
+  &__control {
+    position: absolute;
+    top: 78%;
+    right: 10%;
+    z-index: 10;
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+  // .power-oils__prev
+  &__prev {
+    width: rem(50);
+    height: rem(50);
+    &:active {
+      transform: translate(rem(5), rem(5));
+    }
+  }
+  // .power-oils__next
+  &__next {
+    width: rem(50);
+    height: rem(50);
+    &:active {
+      transform: translate(rem(5), rem(5));
+    }
+  }
+}
+
+.power-oils__slider-wrapper.swiper-wrapper {
+  display: -webkit-box;
+  @media (max-width: $mobile) {
+    display: flex;
+  }
+}
+
+.power-oils__slide.swiper-slide {
+  max-width: 100%;
+
+  @media (min-width: $mobile) {
+    height: rem(300);
+    width: rem(700);
+  }
+}
+
+.power-oils__slide.swiper-slide-active {
+  max-width: 100%;
+
+  @include adaptiveValue("font-size", 32, 22);
+
+  @media (min-width: $mobile) {
+    line-height: math.div(45, 36);
+    width: rem(700);
+    height: rem(400);
+  }
+}
+/*=========================================================================*/
+
+.keeping-oils {
+  // .keeping-oils__question
+  &__question {
+    max-width: rem(1440);
+    margin: 0 auto;
+    display: grid;
+    @include adaptiveValue("margin-bottom", 50, 20);
+    @media (min-width: $tablet) {
+      grid-template-columns: percent(550, 1440) 1fr;
+      column-gap: rem(90);
+    }
+    @media (max-width: $tablet) {
+      grid-template-rows: repeat(2, auto);
+      row-gap: rem(20);
+    }
+  }
+  // .keeping-oils__image
+  &__image {
+    margin: 0 auto;
+    @media (max-width: $tablet) {
+      order: 2;
+    }
+    img {
+      max-width: 100%;
+      @media (min-width: $tablet) {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+  // .keeping-oils__title
+  &__title {
+    align-self: center;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: $mainGreyColor;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    @include adaptiveValue("font-size", 64, 32);
+    line-height: math.div(81, 64);
+    @include adaptiveValue("padding-top", 35, 15);
+    @include adaptiveValue("padding-bottom", 35, 15);
+    @include adaptiveValue("padding-right", 50, 10);
+    @include adaptiveValue("padding-left", 50, 10);
+    @media (max-width: $tablet) {
+      order: 1;
+    }
+  }
+  // .keeping-oils__container
+  &__container {
+  }
+  // .keeping-oils__rules
+  &__rules {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    row-gap: rem(20);
+  }
+  // .keeping-oils__rule
+  &__rule {
+  }
+}
+/*=========================================================================*/
+.rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  @include adaptiveValue("padding-top", 25, 15);
+  @include adaptiveValue("padding-bottom", 25, 15);
+  @include adaptiveValue("padding-right", 50, 10);
+  @include adaptiveValue("padding-left", 50, 10);
+  @include adaptiveValue("font-size", 36, 22);
+  line-height: math.div(45, 36);
+  &-left {
+    justify-content: flex-start;
+  }
+}
+/*=========================================================================*/
+.quality-oils {
+  // .quality-oils__question
+  &__question {
+    max-width: rem(1440);
+    margin: 0 auto;
+    display: grid;
+    @include adaptiveValue("margin-bottom", 50, 20);
+    @media (min-width: $tablet) {
+      grid-template-columns: 1fr percent(300, 1440);
+      column-gap: rem(40);
+    }
+    @media (max-width: $tablet) {
+      grid-template-rows: repeat(2, auto);
+      row-gap: rem(20);
+    }
+  }
+  // .quality-oils__title
+  &__title {
+    align-self: center;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: $mainGreyColor;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    @include adaptiveValue("font-size", 64, 32);
+    line-height: math.div(81, 64);
+    @include adaptiveValue("padding-top", 35, 15);
+    @include adaptiveValue("padding-bottom", 35, 15);
+    @include adaptiveValue("padding-right", 50, 10);
+    @include adaptiveValue("padding-left", 50, 10);
+  }
+  // .quality-oils__image
+  &__image {
+    margin: 0 auto;
+    img {
+      max-width: 100%;
+      @media (min-width: $tablet) {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+    @media (min-width: $tablet) {
+      &-tablet {
+        display: none;
+      }
+    }
+    @media (max-width: $tablet) {
+      &-pc {
+        display: none;
+      }
+    }
+  }
+  // .quality-oils__container
+  &__container {
+  }
+  // .quality-oils__rules
+  &__rules {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    row-gap: rem(20);
+  }
+  // .quality-oils__rule
+  &__rule {
+  }
+}
+/*=========================================================================*/
+
+.result-oils {
+  // .result-oils__bg
+  &__bg {
+    background-color: $mainGreyColor;
+    @include adaptiveValue("padding-top", 50, 20);
+    @include adaptiveValue("padding-bottom", 50, 20);
+  }
+  // .result-oils__container
+  &__container {
+  }
+  // .result-oils__text
+  &__text {
+    color: #fff;
+    @include adaptiveValue("font-size", 48, 24);
+    line-height: math.div(60, 48);
+  }
+}

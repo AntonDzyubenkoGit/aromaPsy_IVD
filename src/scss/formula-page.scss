@@ -1,0 +1,282 @@
+.definition-formula {
+  // .definition-formula__container
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  // .definition-formula__title
+  &__title {
+    @include adaptiveValue("font-size", 32, 20);
+    line-height: math.div(40, 32);
+    max-width: rem(1100);
+    text-align: right;
+    @media (max-width: $tablet) {
+      text-align: left;
+    }
+  }
+}
+/*=========================================================================*/
+
+.testing-formula {
+  background-color: $mainBlueColor;
+  // .testing-formula__container
+  &__container {
+    position: relative;
+    @include adaptiveValue("padding-top", 50, 25);
+    // @include adaptiveValue("padding-bottom", 50, 25);
+  }
+  // .testing-formula__slider
+  &__slider {
+    padding-bottom: rem(25);
+  }
+  // .testing-formula__slider-wrapper
+  &__slider-wrapper {
+    max-height: rem(850);
+    max-width: rem(1200);
+    @media (max-width: $tablet) {
+      max-height: rem(350);
+    }
+    @media (max-width: $mobileSmall) {
+      max-height: rem(390);
+    }
+  }
+  // .testing-formula__slide
+  &__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    @include adaptiveValue("font-size", 32, 22);
+    line-height: math.div(45, 36);
+    background-color: #fff;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    max-height: rem(400);
+    @include adaptiveValue("padding-left", 50, 10);
+    @include adaptiveValue("padding-right", 50, 10);
+  }
+  // .testing-formula__content
+  &__content {
+  }
+  // .testing-formula__scrollbar
+  &__scrollbar {
+    height: 100%;
+    @include adaptiveValue("width", 20, 10);
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    max-height: 90%;
+    border-radius: rem(10);
+    @include adaptiveValue("margin-top", 50, 25);
+    @include adaptiveValue("margin-bottom", 50, 10);
+    margin-right: rem(10);
+    & .swiper-scrollbar-drag {
+      background-color: $mainGreyColor;
+    }
+    z-index: 5;
+  }
+  // .testing-formula__dots
+  &__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(15);
+    z-index: 10;
+    margin-top: rem(30);
+    & .swiper-pagination-bullet {
+      @include adaptiveValue("width", 15, 8);
+      @include adaptiveValue("height", 15, 8);
+    }
+  }
+}
+/*=========================================================================*/
+.reasons-formula {
+  // .reasons-formula__question
+  &__question {
+    max-width: rem(1440);
+    margin: 0 auto;
+    display: grid;
+    @include adaptiveValue("margin-bottom", 50, 20);
+    @media (min-width: $tablet) {
+      grid-template-columns: 1fr percent(1100, 1440);
+      column-gap: rem(40);
+    }
+    @media (max-width: $tablet) {
+      grid-template-rows: repeat(2, auto);
+      row-gap: rem(20);
+    }
+  }
+  // .reasons-formula__image
+  &__image {
+    margin: 0 auto;
+    @media (max-width: $tablet) {
+      order: 2;
+    }
+    img {
+      max-width: 100%;
+      @media (min-width: $tablet) {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+  // .reasons-formula__title
+  &__title {
+    align-self: center;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: $mainGreyColor;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    @include adaptiveValue("font-size", 64, 32);
+    line-height: math.div(81, 64);
+    @include adaptiveValue("padding-top", 35, 15);
+    @include adaptiveValue("padding-bottom", 35, 15);
+    @include adaptiveValue("padding-right", 50, 10);
+    @include adaptiveValue("padding-left", 50, 10);
+    @media (max-width: $tablet) {
+      order: 1;
+    }
+  }
+  // .reasons-formula__container
+  &__container {
+  }
+  // .reasons-formula__content
+  &__content {
+    @include adaptiveValue("font-size", 36, 22);
+    line-height: math.div(45, 36);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    @include adaptiveValue("padding-top", 25, 15);
+    @include adaptiveValue("padding-bottom", 25, 15);
+  }
+  // .reasons-formula__feeling
+  &__feeling {
+    text-align: center;
+    @include adaptiveValue("margin-bottom", 50, 10);
+  }
+  // .reasons-formula__points
+  &__points {
+    display: block;
+    @include adaptiveValue("padding-right", 50, 10);
+    @include adaptiveValue("padding-left", 50, 10);
+    @media (min-width: $mobile) {
+      display: flex;
+      justify-content: space-between;
+      gap: rem(20);
+    }
+  }
+  // .reasons-formula__list
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  // .reasons-formula__reason
+  &__reason {
+    @include adaptiveValue("padding-left", 30, 10);
+    position: relative;
+    &::before {
+      content: "";
+      width: rem(5);
+      height: rem(5);
+      background-color: $mainColor;
+      border-radius: 50%;
+      position: absolute;
+      @include adaptiveValue("top", 18, 10);
+      top: 18px;
+      left: 0;
+      // transform: translateY(50%);
+    }
+  }
+}
+/*=========================================================================*/
+
+.consultation-formula {
+  // .consultation-formula__container
+  &__container {
+  }
+  // .consultation-formula__content
+  &__content {
+    max-width: rem(970);
+    margin: 0 auto;
+  }
+  // .consultation-formula__title
+  &__title {
+    background-color: $mainGreyColor;
+    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
+    @include adaptiveValue("font-size", 48, 24);
+    line-height: math.div(60, 48);
+    color: #fff;
+    text-align: center;
+    @include adaptiveValue("padding-top", 20, 10);
+    @include adaptiveValue("padding-bottom", 20, 10);
+    @include adaptiveValue("padding-left", 28, 10);
+    @include adaptiveValue("padding-right", 28, 10);
+    @media (max-width: $tablet) {
+      margin-bottom: rem(20);
+    }
+    @media (max-width: $mobile) {
+      text-align: left;
+    }
+  }
+  // .consultation-formula__cards
+  &__cards {
+    display: grid;
+    @include adaptiveValue("margin-bottom", 50, 20);
+    @media (min-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: rem(66);
+    }
+    @media (max-width: $tablet) {
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: rem(20);
+    }
+  }
+  // .consultation-formula__card
+  &__card {
+    @include adaptiveValue("font-size", 48, 24);
+    line-height: math.div(60, 48);
+    text-align: center;
+    background-color: #fff;
+    @include adaptiveValue("padding-top", 50, 10);
+    @include adaptiveValue("padding-bottom", 110, 10);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    @media (max-width: $tablet) {
+    }
+  }
+  // .consultation-formula__text
+  &__text {
+    display: grid;
+    grid-template-rows: 1fr repeat(2, auto);
+    @include adaptiveValue("row-gap", 60, 20);
+    @media (min-width: $tablet) {
+      p {
+        &:first-child {
+          margin-bottom: rem(50);
+        }
+      }
+    }
+  }
+  // .consultation-formula__button
+  &__button {
+    width: 100%;
+    @include adaptiveValue("margin-bottom", 50, 20);
+    border: 1px solid $mainColor;
+    @include adaptiveValue("font-size", 64, 24);
+    @media (max-width: $mobile) {
+      line-height: 1;
+    }
+  }
+
+  // .consultation-formula__offline
+  &__offline {
+    display: flex;
+    justify-content: flex-end;
+    @include adaptiveValue("font-size", 36, 22);
+    line-height: math.div(45, 36);
+  }
+}

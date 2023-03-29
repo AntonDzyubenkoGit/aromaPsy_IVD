@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', { "title":"Главная | Практикующий психолог Ирина Дзюбенко" })
+
+  <body>
+    <div class="wrapper">
+      @@include('html/header.html', {})
+      <main class="page page-main">
+        <section class="page-main__introduce introduce-main">
+          <div class="introduce-main__container">
+            <div class="introduce-main__info">
+              <div class="introduce-main__cards">
+                <div class="introduce-main__card"><h2>Меня зовут Ирина Дзюбенко - я практикующий психолог, ольфактотерапевт, ароматолог.</h2></div>
+                <div class="introduce-main__card offset-rt-1"><p>Психология для меня – это шаг к себе, возможность обратить внимание человека на себя, помочь ему на его пути к осознанности.</p></div>
+                <div class="introduce-main__card offset-t"><p>Я профессионально помогаю людям в решении физических и душевных проблем.</p></div>
+                <div class="introduce-main__card offset-rt-2">
+                  <p>Если вы хотите жить в гармонии с собой и окружающей средой, используя силы природы, скрытые в эфирных маслах, то я расскажу вам как это сделать.</p>
+                </div>
+              </div>
+            </div>
+            <div class="introduce-main__action">
+              <div class="introduce-main__media">
+                <div class="introduce-main__photo"><img src="./img/main/general_photo.jpg" alt="Фотография аромотолога" /></div>
+                <div class="introduce-main__call">
+                  <a class="introduce-main__link" href="./about.html" target="_blank"
+                    >Подробнее узнать обо мне, вы можете <br />
+                    на <span>отдельной странице сайта</span></a
+                  >
+                  <a class="introduce-main__button button" href="https://t.me/psiivd" target="_blank"><span>Консультация</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-main__aromo-oil aromo-oil-main">
+          <div class="aromo-oil-main__container">
+            <div class="aromo-oil-main__inner">
+              <div class="aromo-oil-main__quote">
+                <q>Люди могут закрыть глаза и не видеть величия, ужаса, красоты, и заткнуть уши, и не слышать людей или слов. Но они не могут не поддаться аромату. Ибо аромат — это брат дыхания..</q>
+                <p>Патрик Зюскинд. (Парфюмер)</p>
+              </div>
+              <div class="aromo-oil-main__content">
+                <div class="aromo-oil-main__cards">
+                  <div class="aromo-oil-main__card">
+                    <div class="aromo-oil-main__text text-aromo-oil">
+                      <p class="text-aromo-oil__top">
+                        У аромо-масел богатая история, которую можно рассказывать долго и очень увлекательно. <span>Подробно обо всех маслах можно узнать <a href="./aromo_oils.html" target="_blank">здесь</a></span>
+                      </p>
+                    </div>
+                    <div class="aromo-oil-main__image">
+                      <img src="./img/main/oil_01.png" alt="Картинка аромомасла" />
+                    </div>
+                  </div>
+                  <div class="aromo-oil-main__card">
+                    <div class="aromo-oil-main__image aromo-oil-main__image-order">
+                      <img src="./img/main/oil_02.png" alt="Картинка аромомасла" />
+                    </div>
+                    <div class="aromo-oil-main__text">
+                      <p class="text-aromo-oil__bottom">
+                        Один из самых частых вопросов об аромо-маслах звучит так: для чего использовать аромо-масла? <br />
+                        Если говорить коротко, то аромомасла при использовании позволяют дышать жизнью полной грудью, лететь и наслаждаться, расправив крылья, вдохновляться и любить, меняя реальность
+                        по своему усмотрению!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="aromo-oil-main__call">
+                  <p>На другие частые вопросы вы найдете ответы <a href="./aromo_oils.html" target="_blank">в специальном разделе</a></p>
+                </div>
+              </div>
+              <h3 class="aromo-oil-main__title">А также вы можете получить консультацю об аромомаслах от мастера с 10-ти летним опытом</h3>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-main__formula formula-main">
+          <div class="formula-main__preview preview-formula">
+            <div class="preview-formula__container">
+              <p>Взять любое аромомасло и использовать, звучит просто, но это не всё что можно сделать.</p>
+            </div>
+          </div>
+          <div class="formula-main__container">
+            <div class="formula-main__title">
+              <h3>Отдельное место в аромотерапии занимает аромодиагностика и создание своей уникальной <b>аромоформулы.</b></h3>
+            </div>
+            <div class="formula-main__inner">
+              <div class="formula-main__cards">
+                <div class="formula-main__card"><p>Что такое аромоформула?</p></div>
+                <div class="formula-main__card formula-main__card_offset-1"><p>Как её создать? Как использовать?</p></div>
+                <div class="formula-main__card formula-main__card_offset-2"><p>Мне подойдет аромоформула другого человека?</p></div>
+              </div>
+            </div>
+            <div class="formula-main__link">
+              <a href="./aromo_formula.html" target="_blank">На эти вопросы я отвечу вам подробно на странице <b>“Моя аромоформула”</b></a>
+            </div>
+          </div>
+        </section>
+      </main>
+      @@include('html/footer.html', {})
+      <script src="js/app.min.js"></script>
+    </div>
+  </body>
+</html>

@@ -42,6 +42,12 @@
   &__slider-wrapper {
     position: relative;
     @include adaptiveValue("padding-bottom", 30, 20);
+    @media (min-width: $mobile) {
+      min-height: rem(400);
+    }
+    @media (max-width: $mobile) {
+      min-height: rem(200);
+    }
   }
   // .power-oils__slide
   &__slide {

@@ -21,11 +21,12 @@ if (document.querySelector(".certifications__slider")) {
     speed: 800,
     loop: true,
     initialSlide: 1,
-    autoHeight: true,
+    autoHeight: false,
     breakpoints: {
       320: {
         slidesPerView: 1,
         spaceBetween: 15,
+        autoHeight: true,
       },
       768: {
         slidesPerView: 2,
